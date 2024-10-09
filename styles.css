@@ -1,0 +1,268 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.search-bar {
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #131212;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    background-color: #b09bc2;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #ccc;
+}
+
+/* Product Grid Styles */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Product Card Styles */
+.product {
+    background-color: rgb(169, 144, 214);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add some space below the image */
+}
+
+.product p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Buy Button Styles */
+.buy-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Maintain the same color */
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s; /* Transition for background color and transform */
+}
+
+.buy-button:hover {
+    background-color: #555; /* Darken slightly on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+}
+
+/* Chat Icon Styles */
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #a65fc7;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.chat-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Chatbot Box Styles */
+.card {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0; /* Start with invisible */
+}
+
+/* Chatbot Open State */
+.card.open {
+    display: flex; /* Make it visible */
+    transform: translateY(0); /* Slide in from the bottom */
+    opacity: 1; /* Make it fully visible */
+}
+
+/* Header Style */
+#header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+#message-section {
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+    background-color: #8a7d7d;
+}
+
+#input-section {
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    background-color: #ffffff;
+}
+
+#input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.send {
+    background-color: #da62b6;
+    color: rgb(136, 87, 117);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.send .circle {
+    display: inline-block;
+}
+
+/* Chatbot Messages */
+.message {
+    margin: 10px 10px;
+}
+
+#bot-response {
+    background-color: #8a3877;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #a65fc7; /* Same color as header */
+    color: rgb(0, 0, 0);
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 20px; /* Add some space above the footer */
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 15px; /* Space between footer links */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(14, 13, 13); /* White color for links */
+    transition: color 0.3s; /* Smooth transition for hover */
+}
+
+.footer-links a:hover {
+    color: #0c0b0b; /* Lighten color on hover */
+}

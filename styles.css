@@ -1,3 +1,4 @@
+
 /* Global Reset */
 * {
     margin: 0;
@@ -71,7 +72,7 @@ nav ul li a:hover {
 
 /* Product Card Styles */
 .product {
-    background-color: rgb(169, 144, 214);
+    background-color: #a990d6;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -240,7 +241,7 @@ nav ul li a:hover {
 
 /* Footer Styles */
 footer {
-    background-color: #a65fc7; /* Same color as header */
+    background-color: #a990d6; /* Same color as header */
     color: rgb(0, 0, 0);
     padding: 15px 0;
     text-align: center;

@@ -1,141 +1,176 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServiceHub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Service Provider Finder</title>
+    <link rel="stylesheet" href="services.css">
+    <!-- Favicon -->
+    <link rel="icon" href="C:\Users\Lenovo\Downloads\service.jpg" type="image/x-jpg">
     <link rel="icon" href="C:\Users\Admin\Desktop\logo.jpg" type="image/x-jpg">
-    <style>
-        /* Basic styles for the chatbot icon */
-        #chatbot-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #007bff;
-            border-radius: 50%;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
 
-        #chatbot-icon:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>ServiceHub</h1>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for products...">
-            <button type="submit">Search</button>
+        <div class="container">
+            <div class="logo">
+                <img src="C:\Users\Admin\Desktop\logo.jpg" alt="Logo">
+            </div>
+            <div class="contact">
+                <span></span>
+                <a href="tel:+1234567890"></a>
+            </div>
+            <div class="search-container">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00bfff" width="24px" height="24px">
+                    <path d="M15.5,14h-0.79l-0.28-0.27c1.19-1.39,1.88-3.19,1.88-5.11C16.31,4.68,13.63,2,10.16,2S4,4.68,4,8.11s2.68,6.11,6.11,6.11 c1.92,0,3.72-0.69,5.11-1.88l0.27,0.28v0.79l4.25,4.25c0.41,0.41,1.07,0.41,1.48,0s0.41-1.07,0-1.48L15.5,14z M10.16,12.11 c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4S12.37,12.11,10.16,12.11z"/>
+                </svg>
+                <input type="text" placeholder="Search...">
+            </div>
+           
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="login.html">LOGIN</a></li>
-            </ul>
-        </nav>
     </header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="#"><span class="home-icon">🏠</span> Home</a></li>
+            <li><a href="#">Applying</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Providers</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Participants</a></li>
+            <li><a href="#">Provider Finder</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <section class="product-grid">
-            <div class="product">
-                 <img src="https://images-cdn.ubuy.co.in/64dcc5de93f3bd694b590b5b-3-5-cu-ft-retro-mini-fridge.jpg">
-                 <p>3.5 cu. ft. Retro Refrigerator Mini Fridge with Freezer, 2-Doors and Adjustable Mechanical Thermostat in Blue
-                </p>
-                <button class="buy-button" onclick="buyProduct('Product 1')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="https://5.imimg.com/data5/LO/PA/MY-13208987/samsung-refrigerator.jpg" alt="Product 2">
-                <p>3.5 cu. ft. Retro Refrigerator Mini Fridge with Freezer, 2-Doors and Adjustable Mechanical Thermostat in violet      </p>
-                <button class="buy-button" onclick="buyProduct('Product 2')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gl-c322kpzy_apzzebn_eail_in_c/450-thumbnail-new-01.jpg" alt="Product 3">
-                <p>3.5 cu. ft. Retro Refrigerator Mini Fridge with Freezer, 2-Doors and Adjustable Mechanical Thermostat in silver                </p>
-                <button class="buy-button" onclick="buyProduct('Product 3')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPDw0PDxAPDw8NDQ8NDQ0NDQ8PDQ0NFREWFhURFRUYHSggGBolGxUVITEhJSkrLi4uFx84ODMsNygtLjcBCgoKDg0OFQ8QFysdFR0tKy0tKystLSstLSsrLSstLS0tLS0tKystLjctLTItLS0tLS0tLSstKy0rLTcrLSsrK//AABEIAKgBLAMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAACAwABBAYFBwj/xABHEAACAQICAwoJCAkFAQAAAAAAAQIDEQQSBRORBiExUlNVYXGU0iJBUYGTobHR4hQVFiNykrLBJDJCREVzgqLCFzNDYvAH/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECBAMF/8QAHxEBAQEAAwEBAQADAAAAAAAAAAERAhITMSEDIlFh/9oADAMBAAIRAxEAPwD7IxckNYEkeseEKYEkMYJWymgJIa0BJGpUwloW0OYuSKzhUgGMaAZuM0ti5IawJFjFhTQLDkAajFgWAw2LZqMULAYcgCsgYLDYDCFsFhMFhmhYuQxi2aiAYEhkgJFxCmCGwBgpi2MYEggGAw2AwFsWxkhbAWwZByQMkAtg2DBaGD7gwGECz576YJIBjGBJFUtgSDaAlF+R7C6pcgJBuL8j2ASg/I9hdLCpi2NdOXFewW6UuK9hqVnKXICQ10Z8VgOhPis1sYspEwGPdCfFYDw8+KzWx52UlsBsc8PPisF4afFZrtGbKRIC494efFYDw0+Ky7GcpTAkxzw0+KwHhanFZdiZWdsBs0PCVOKwHhanFYliZf8ARLYuTNDwtTiMB4WpxJbC7GetIbAkx7wtTiyAeFqcSWw12idazsEc8NPiS2APDz4kvusdoZS7gSGyoT4svusB0ZcWWxk7RMpLYEhkqUuLLYxc01w7C7DAMCRbYMishkCwmCwAYDDYIH24pl3BZ86PpKCprhb4IpsoOC3pdaW1jl8a4/tGqdvz6WU4D2UeWvbCHTB1RpsVYLjK6QEqZtcQJUy6jHqwXA1SgLcTUqM7plOmPaKsaTCHT6ANV0GholixixmdPoKdPoNDQNis2M+rBdI02KaCYyOl0AukamC0UxldIB0jW0C4hMZHS6AHS6DW0DYpjI6fQBKl0GxxBlEp1YnS6AHS6PYbHEBxCdWOVLoPO0vQWRytvrg2N/k9p7UomHSsfqZ9Xt3vzG4dXGvEq9rgusjy8RK05/aYMarOqOK8f16utJnPNjWGxrFTGxyKuZ1UCzBMfdGUyymcL6OoMh+r/XD8SFDYcC/mR9pnn8a4fWghCHi91glkRRCMgMpBFTM8g5yFtmoKBLbKNsqaBCbBLGVEZYLYFNAsJsFlQLBLbBbApoFoJsEIFoBjJC2zWIoFoIFsoWwJINsCZADMmPjenJdMPxI1NmfF/qS83tQR8qxrtUn1p+pC0w8e/rJeb2IRE6Z8cd+01MJSARZWTo1BqqGO4amVK/QtwWQhxOyVB0OBfbQgZB+Cv5kfajPP49eF/WplEuQ8XushVwJVCoKUhE5FSkA2WQWVcFMpyNs6K4DZVyrlRdyAtlNlZW2Dcq5TkWC7gtlMFsCNlNlNlNhLUYLZTkC2ERsFspsFs1BbYMmU2VcopsCTI5AtkFSZmxT8GXm9o6TM2LfgPrj+JBHyzSP+7LzewSmN0g/rZeb2ITE6Z8jj5fTSwUEjTKmREIQfochRDjdSmHF+A/5kPxoWwk/q6vRHMutb/wCROXxrhf8AI/OVrTDjNIU6TSqThBtXSbldry8BnpaZoTlGEatNyk1GKvJXb4FwGJwv3Hv3m5r1ZVBTkeDul3QPAuklh6mIdXO7UpO8MtuHwX5TxFu/nzditsu4WcV127kVmOK+nkub8T/d3Cvp3Lm/E7ZdwvU12twcxx0t3Msql8gxG+5K15XVknxOn1Cnu9lzfitr7hcrNdrmKzHFfT2XN+K9fcLhu7k3b5vxS3m9+/iTfE6BiOzbBcjinu/lzfivX3AXu/lzfivX3CjtrlNnE/T+XN+K9fcOlxekJ08PXr6ly1NKpU1cal6lTIm8sVl4XbeCa3uQLZwv+oj5uxfnv3Cf6hPm/FbX3Aa7hsFs4tbvW03834reaVt/xpu/6nQA930ub8V6+4EdqwWzinu+lzfiv7u4SO7yT/cMV6+6Udm2C2cZU3eNNr5Bit5tX39/f+yD9PJc34na+4Udk2U5HG/TqT/cMTtfcJ9NpP8AccT6+6EdfJipTMtHGOcKcnFQdRXUZSd1w7z3ugOTl5I7X7gGuRk0hK1OXXD8aGOUv+u1+4w6TqS1cr5bNS4G/FCT/ID5zjn9ZPrXsQqIWKd6k/tMGJ1T4479MiGAgwimCEyrBH6FTI2CUcuOjVhUv2l5YsWy6b3/AFE5T8Xjf1zm6PA1as8NUpQ1mWDjUjmit9O9t99Z5tTRuJdWnOOHyZJ03aMqdvBknfeZ1FSbjKXC4t33uGL8fm8e0F4j7X3Wb4/1smLy/jLy7a5v/wCo0XKlQrRV9XUknbhtKKf+J84hpNLhlbrlY+qbodIYZ03Qr1VSlUtKm6kZJKSe872twnHTw8KDtPAYWtffjUnBTU15U7b6Mz8dG68D52p8pHzzXvJ870+Vh6RHQxrYd/wjRz68PBv8Iy+G5n0b2Wn3TSOcraQSoxqKccjrTpKWZWzqEJNbJR2mdaZj46sV/Wjrak6DgqfzVgVBT1mSFJQjntbNZLhtvGfJhl/CNHv7VGL9sSSjmvninysfSIbhtMUs8U6sPCvD/cW9mTjfh8V7nQ3wvM+jezw7pM2G5n0b2an3S1HJ1dK5JShOajKDcZRlJJqS4UWtMw5aPpF7zp8T8nqTlUnovBynN3lKcMzk/Ohf6Kv4Ro/0EO6TDY5z55p8tD0i95XzvS5WHpF7zpc+G5n0d2eHcI6mG5n0d2en3Cn45l6Yp8rD0i95I6apr/lh6Re86XW4bmfR3Z6fcB1uG5n0d2eHdCfjxtLaTisPh5SmovEVJ1YXnw0ILIpLocpT+4eTHS0eVj6RHWY2pQrODnozCPV01SprfUYU021GKtZK7bt0iFHDL+E4Hz00/wDEkXY55aXhysfvr3m7RGP11alQpzjOpVqKMI51vvh/I9ZTw3NGj/Qx7o/C46lSmqlLReBpVI3y1KdNQqRumnaSjdbzZUcctLK7vUSd3dOaTT8dw1paHKx9Ij3lQw3NeE86b9qHQjh+asD56Sf+IPxzsdLU+Vj99e89DReO1klCk3VnN5YQpvNOT8iSOgw2BoT4NE4D0EX/AInR6LwVDA/pdXCYLCKEZOnqqcY1pyatZWSsvKyWjDpZOhqKN7zo5M7T/bUfD82aUjdh8ZmSuczjdOUJVJTq1Y55tu1pPhd96y6TfhMVFxjKN3GSunklZry8AxHu6083TFXwJL/q9rdl6sxPlXkUn/S17Ty9NVmqcm+FpvoW9ZISfqX45Cbu2/K2/WFFEjEZFHU5aiQSRaQViIGxLBWIGX3y5Lg3I2cz2W2DcoplwZMTdNvxMyyqnpSMONoKS6idW+9eJp/RlPGQUZ3jKDbhUiruN+FW8a4DxcHuerUU4wxklDh1bpKVPryybR7lfCdZkqYQ31PUuOCrR/56Xnwq/KQWpr8vR7J8YEsL1inhevax1PU90sRy9HsvxgavEcvR7J8Yh4br9YLw3/rsvQ9TnTxHLUOyfGC6eI5eh2T4xDw/XtAeG69peielPcMRy9DsnxguGI5ah2T4xDw/XtAeH6y+aerRkxHLUOyfGDkxHLUOy/EIeH69oDode0ef/T1PccRy1DsvxAuOI5ah2X4hDode0F4fr2jzPVofyjlqHZX3wLYjlaHZfjM7w/XtBeH69o8z1aMuI5Wh2X4imsRy1DsvxGZ0OvaC6HXtL5w9a0/pHLUOy/EUqmJXBWodl+MyOh17QXQ69o6HrXprSGOStDFUafTDCRv65M8jGaPxFaTlVxs6kn45wv6rhOj17QXR6x5w9Weluci5qVWtKol+zGGW/Re7sdBGqkkkkkkkkuBJcCPH1PXtZWp69pOh6vYlibeM8nSeL1ngrg8b8oDok1RZwZv9GHVhKBs1RNUbY1kyhKJp1JaojGdZsoWQ1KkFqhhr7OQotHO91MoIpgC0KnEcLkEedXpGWdM9WrC5lnA1KxXnSpCpUj0JQFygaR57pAOkb3TFygaGB0gJUTe4AOAVhdIB0jc6YLplRhdIDVG9wAdMIwukU6RudMFwKmsGqBlSNzpgukU1gdIF0je6YDpg1hdIB0T0HTBdMGvPdIF0j0HTAlTBrDqugrUm3VlZAmsWqKdI2uBTgDWPVFao15CsgTWXVl6s0ZCZAaz5CspocQcoH1csos5nShGQpgQGSCKYSltCKkTRIXJFZrJKIuUTROIpo3GCHECUDQ0A0UZ3EBxNDQDQ2hDgC4mhxBcS6M7gDlNDiC4lRncAXA0OJWUDM4AuBpcSsoRlcAXTNTgLcQM+QFwNNgXEqMsqYDgamgXEDLkKyGlwBcSoz5QXEe0U4gZshWQ0ZSsoGfKTKOaKcQM7iDYe0A0E19OIQhzOtCEIBCmQgAMFkIVkqaESRCGoxQMFoshpANA2IQgpoFohDQGxTRRABylNEIUDYFoogSqaKaIQIU0VYhABaBaIQIFoBohAUNimiENIBoqxRAKaBaLIEC0CUQD/2Q==" alt="Product 4">
-                <p>Godrej Powercool 1 Ton Split AC Indoor Unit Copper with remote
-                    With Remote</p>
-                <button class="buy-button" onclick="buyProduct('Product 4')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="data:image/jpeg;base64,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" alt="Product 5">
-                <p>Godrej Powercool 1 Ton Split AC Indoor Unit Copper with remote
-                    With Remote</p>
-                <button class="buy-button" onclick="buyProduct('Product 5')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="https://www.hindustantimes.com/ht-img/img/2023/09/13/550x309/top_ac_brands_in_india_1694624122665_1694624138097.jpg" alt="Product 6">
-                <p>	
-                    Crompton Insta Comfort Heater 2000 Watts Heat Convector</p>
-                <button class="buy-button" onclick="buyProduct('Product 6')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQMp2N5RKZa2RJfABqNF6NTHknU0_u8wfJrSXO8u4JF7yVwxofk3sXICoUEFz-rHkWd7Nh2WbKdy4IFicQPKw1aG6jCUvdUYJF-nOB9Bg-grfD5ok-OqiLFww&usqp=CAE" alt="Product 7">
-                <p>	
-                    Crompton Insta Comfort Heater 2000 Watts Heat Convector</p>
-                <button class="buy-button" onclick="buyProduct('Product 7')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJq9SKPna_hR7YPSXlH_fIM8rNhF6SSA3OOyR79E-EZX2yy7oM5OTsKsx-UkgqmrzIvZFsUGU6IQlANqp5BCKicMHaKMCbhTE787w5U_x95G3VVFyt-Cm6bNsF&usqp=CAE" alt="Product 8">
-                <p>	
-                    Crompton Insta Comfort Heater 2000 Watts Heat Convector</p>
-                <button class="buy-button" onclick="buyProduct('Product 8')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTS84Vpla_cuptzsloyWvQpH_zYlHEzaRfaQF3I2COySWFqewmSK0yRMjaeVCojqGouATlq41D-JpaVIcqTLDsvDAadz7MYRDdRSfomVjRKlwPD6vXZ16qP&usqp=CAE" alt="Product 9">
-                <p>Godrej Powercool 1 Ton Split AC Indoor Unit Copper with remote
-                    With Remote</p>
-                <button class="buy-button" onclick="buyProduct('Product 9')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="https://5.imimg.com/data5/LO/PA/MY-13208987/samsung-refrigerator.jpg" alt="Product 2">
-                <p>3.5 cu. ft. Retro Refrigerator Mini Fridge with Freezer, 2-Doors and Adjustable Mechanical Thermostat in violet      </p>
-                <button class="buy-button" onclick="buyProduct('Product 10')">Buy</button>
-            </div>
-            <div class="product">
-                <img src="https://images-cdn.ubuy.co.in/64dcc5de93f3bd694b590b5b-3-5-cu-ft-retro-mini-fridge.jpg">
-                <p>3.5 cu. ft. Retro Refrigerator Mini Fridge with Freezer, 2-Doors and Adjustable Mechanical Thermostat in Blue
-               </p>
-               <button class="buy-button" onclick="buyProduct('Product 11')">Buy</button>
-           </div>
-           <div class="product">
-            <img src="https://www.lg.com/content/dam/channel/wcms/in/images/refrigerators/gl-c322kpzy_apzzebn_eail_in_c/450-thumbnail-new-01.jpg" alt="Product 3">
-            <p>3.5 cu. ft. Retro Refrigerator Mini Fridge with Freezer, 2-Doors and Adjustable Mechanical Thermostat in silver                </p>
-            <button class="buy-button" onclick="buyProduct('Product 12')">Buy</button>
+    <!-- Provider Finder Section -->
+    <section class="provider-finder">
+        <div class="provider-finder-container">
+            <h2>Provider Finder</h2>
+            <form class="provider-form">
+                <label for="postcode">Suburb/Postcode:</label>
+                <input type="text" id="postcode" placeholder="Type here Postcode and then click Search button">
+                
+                <label for="state">State/Territory:</label>
+                <select id="state">
+                    <option value="NN">None</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="AR">Arunachal Pradesh</option>
+                    <option value="AS">Assam</option>
+                    <option value="BR">Bihar</option>
+                    <option value="CT">Chhattisgarh</option>
+                    <option value="GO">Goa</option>
+                    <option value="GJ">Gujarat</option>
+                    <option value="HR">Haryana</option>
+                    <option value="HP">Himachal Pradesh</option>
+                    <option value="JH">Jharkhand</option>
+                    <option value="KA">Karnataka</option>
+                    <option value="KL">Kerala</option>
+                    <option value="MP">Madhya Pradesh</option>
+                    <option value="MH">Maharashtra</option>
+                    <option value="MN">Manipur</option>
+                    <option value="ME">Meghalaya</option>
+                    <option value="MZ">Mizoram</option>
+                    <option value="NL">Nagaland</option>
+                    <option value="OD">Odisha</option>
+                    <option value="PB">Punjab</option>
+                    <option value="RJ">Rajasthan</option>
+                    <option value="SK">Sikkim</option>
+                    <option value="TN">Tamil Nadu</option>
+                    <option value="TS">Telangana</option>
+                    <option value="TR">Tripura</option>
+                    <option value="UP">Uttar Pradesh</option>
+                    <option value="UK">Uttarakhand</option>
+                    <option value="WB">West Bengal</option>
+                    <option value="DL">Delhi</option>
+                    <option value="LD">Lakshadweep</option>
+                    <option value="PY">Puducherry</option>
+                    <option value="CH">Chandigarh</option>
+                    <option value="DD">Dadra and Nagar Haveli and Daman and Diu</option>
+                    <option value="JK">Jammu and Kashmir</option>
+                    <option value="LA">Ladakh</option>
+                </select>
+
+                <label for="registration-group">Registration Group:</label>
+                <select id="registration-group" multiple>
+                    <option value="Accommodation">Accommodation / Tenancy Assistance</option>
+                    <option value="Assistance Animals">Assistance Animals</option>
+                    <option value="Daily Activities">Daily Personal Activities</option>
+                    <option value="Group Activities">Group and Centre Based Activities</option>
+                    <option value="Household Tasks">Household tasks</option>
+                    <option value="Communication Equipment">Communication and information equipment</option>
+                    <!-- Add other options here -->
+                </select>
+                
+                <label for="provider-name">Provider ABN/Name:</label>
+                <input type="text" id="provider-name" placeholder="Type here...">
+                
+                <label for="provider-status">Provider Status:</label>
+                <select id="provider-status">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+                
+                <button type="reset">RESET</button>
+            </form>
         </div>
-        </section>
-    </main>
+    </section>
 
-    <!-- Chatbot Icon -->
-    <div id="chatbot-icon" onclick="openChatbot()">
-        <span>💬</span>
-    </div>
+    <!-- Provider List Section -->
+    <section class="provider-list">
+        <h2>Service Providers</h2>
+        <div class="row">
+            <!-- Provider 1 -->
+            <div class="column">
+                <div class="provider-box">
+                    <h3>Ace Plan Management</h3>
+                    <p><strong>Address:</strong> Sandhurst Boulevard, Sandhurst, VIC 3977</p>
+                    <p><strong>Phone:</strong> 0423 128 110</p>
+                    <p><strong>Email:</strong> <a href="mailto:cheryl@aceplanmanagement.com.au">cheryl@aceplanmanagement.com.au</a></p>
+                </div>
+            </div>
+            <!-- Provider 2 -->
+            <div class="column">
+                <div class="provider-box">
+                    <h3>Elite Disability Services</h3>
+                    <p><strong>Address:</strong> 191 Mitchell Street, Palmerston City, NT 0830</p>
+                    <p><strong>Phone:</strong> 0482 843 009</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@elitedisabilityservices.com.au">info@elitedisabilityservices.com.au</a></p>
+                </div>
+            </div>
+            <!-- Provider 3 -->
+            <div class="column">
+                <div class="provider-box">
+                    <h3>Provider 3</h3>
+                    <p><strong>Address:</strong> Address of Provider 3</p>
+                    <p><strong>Phone:</strong> 1234 567 890</p>
+                    <p><strong>Email:</strong> <a href="mailto:provider3@example.com">provider3@example.com</a></p>
+                </div>
+            </div>
+            <!-- Provider 4 -->
+            <div class="column">
+                <div class="provider-box">
+                    <h3>Provider 4</h3>
+                    <p><strong>Address:</strong> Address of Provider 4</p>
+                    <p><strong>Phone:</strong> 1234 567 891</p>
+                    <p><strong>Email:</strong> <a href="mailto:provider4@example.com">provider4@example.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
+        </div>
+    </section>
 
-    <script>
-        function openChatbot() {
-            // Open the chatbot in a new tab
-            window.open("chatbott.html", "_blank");
-        }
+    <!-- Map Section -->
+    <section class="map">
+        <h2>Find Our Locations</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093494!2d144.9537363156782!3d-37.81720944202196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5778dd3c33aee53!2sVictoria%20Harbour%20Promenade%2C%20Docklands%20VIC%203008%2C%20Australia!5e0!3m2!1sen!2sin!4v1627567288830!5m2!1sen!2sin" width="600" height="450" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
 
-        function buyProduct(product) {
-            alert("You have selected " + product);
-        }
-    </script>
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Your Company. All rights reserved.</p>
@@ -146,5 +181,7 @@
             <li><a href="#">Contact Us</a></li>
         </ul>
     </footer>
+    <script src="script.js"></script>
+
 </body>
 </html>
